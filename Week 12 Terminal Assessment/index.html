@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Bootstrap Site - Terminal Assessment 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 5rem 1rem;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">JCSolutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Modern Front-End Development</h1>
+            <p class="lead mb-4">A high-performance responsive landing page built with clean Bootstrap components and dynamic JavaScript input authentication.</p>
+            <button class="btn btn-warning btn-lg fw-semibold" data-bs-toggle="modal" data-bs-target="#infoModal">Launch Quick Overview</button>
+        </div>
+    </header>
+
+    <main class="container my-5" id="services">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark">Our Core Pillars</h2>
+            <p class="text-muted">Designed cleanly utilizing native Bootstrap responsive flex layout variables.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary mb-3">Bootstrap Grid</h5>
+                        <p class="card-text text-muted">Leverages a modern mobile-first flexible grid break environment scaling perfectly to match hardware configurations seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary mb-3">Custom Interaction</h5>
+                        <p class="card-text text-muted">Engineered strictly with Vanilla JavaScript event logic verifying client input vectors before allowing data submission payloads.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="card h-100 p-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary mb-3">Fluid UI/UX</h5>
+                        <p class="card-text text-muted">Maintains clear layout visibility metrics with custom color groupings, sticky navigators, and high contrast typography setups.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="bg-white py-5 border-top" id="contact">
+        <div class="container" style="max-width: 600px;">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Contact Registration</h2>
+                <p class="text-muted">Provide your details below. Real-time validation checks will activate on action submit.</p>
+            </div>
+
+            <form id="submissionForm" novalidate class="p-4 border rounded bg-light shadow-sm">
+                <div class="mb-3">
+                    <label for="clientName" class="form-label fw-semibold">Full Name</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Juan Dela Cruz">
+                    <div class="invalid-feedback" id="nameFeedback">Please provide your name.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clientEmail" class="form-label fw-semibold">Email Address</label>
+                    <input type="email" class="form-control" id="clientEmail" placeholder="juan@example.com">
+                    <div class="invalid-feedback" id="emailFeedback">Please enter a valid email address structure.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clientMessage" class="form-label fw-semibold">Message Description</label>
+                    <textarea class="form-control" id="clientMessage" rows="4" placeholder="Type your inquiry details here..."></textarea>
+                    <div class="invalid-feedback" id="messageFeedback">Message block content cannot be blank.</div>
+                </div>
+
+                <div class="alert alert-success d-none mb-3" id="formSuccessAlert" role="alert">
+                    Form verification complete! Form submitted successfully.
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 fw-semibold py-2">Submit Secure Registration</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="infoModalLabel">System Status Report</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-toggle="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="mb-2"><strong>Core Status:</strong> Operational</p>
+                    <p class="mb-2"><strong>Layout Engine:</strong> Bootstrap v5.3</p>
+                    <p class="mb-0 text-muted">This interactive modal block serves to satisfy the custom client interface interactive components section required inside the primary performance index scorecard metrics.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal">Close Window</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0 small">&copy; 2026 JCSolutions Landing. Formulated Cleanly for Week 12 Terminal Assessment Submission.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
